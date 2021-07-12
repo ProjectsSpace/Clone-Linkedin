@@ -97,6 +97,7 @@ a:visited {
 }
 .hash__tags li a {
   font-weight: 600;
+  display: block;
 }
 .hash__tags li a span {
   vertical-align: top;
