@@ -1,0 +1,15 @@
+.app {
+}
+
+.app__body {
+  display: grid;
+  grid-template-columns: 20% 50% 26%;
+  max-width: 1148px;
+  margin: 40px auto;
+  grid-column-gap: 2%;
+}
+
+/* Global Styles */
+a {
+  text-decoration: none;
+}
