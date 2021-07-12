@@ -23,6 +23,7 @@ a:visited {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  border: 1px solid #00000014;
 }
 .user__identity {
   padding: 0;
