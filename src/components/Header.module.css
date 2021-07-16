@@ -66,5 +66,5 @@
 
 .header__right {
   composes: header__left;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }

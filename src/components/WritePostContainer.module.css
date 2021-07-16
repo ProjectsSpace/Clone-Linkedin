@@ -1,0 +1,114 @@
+/* Post writing css */
+.write__container {
+  color: #00000070;
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #00000026;
+}
+.write__area {
+  display: flex;
+}
+.avatar {
+}
+.write__button {
+  flex: 1;
+}
+.write__button button {
+  width: 98%;
+  margin-left: 2%;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  border: 1px solid #00000026;
+  border-radius: 35px;
+  text-align: left;
+  padding: 10px 15px;
+  cursor: pointer;
+  background: white;
+  color: #00000070;
+  font-weight: 600;
+}
+
+.write__choices {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px 0px;
+  font-size: 1.4rem;
+}
+.write__choices svg {
+  font-size: 2.4rem;
+}
+
+/* Modal Designs */
+.modal__writePost {
+  width: 552px;
+  margin: 100px auto;
+  border-radius: 8px;
+  background: #fff;
+  padding: 12px;
+  border: 1px solid #00000026;
+}
+
+.modal__writePostHeader {
+  margin-bottom: 10px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid #00000026;
+  margin-bottom: 10px;
+}
+.title h2 {
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
+.modal__closeIcon {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #00000026;
+  background: #fff;
+  cursor: pointer;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+.author p {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.modal__postBody {
+}
+.modal__postBody form {
+}
+.modal__postBody textarea {
+  width: 100%;
+  border: none;
+  margin-bottom: 10px;
+  min-height: 90px;
+  font-size: 1.6rem;
+  color: #00000070;
+  resize: vertical;
+}
+.modal__postBody textarea:focus {
+  outline: none;
+}
+.modal__postBody button {
+  padding: 7px 15px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: auto 0 auto auto;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  background-color: #0a66c2;
+}
