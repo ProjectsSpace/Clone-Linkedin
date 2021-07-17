@@ -42,7 +42,7 @@ function Sidebar() {
         </div>
       </div>
 
-      <div className={styles.widget}>
+      <div className={`${styles.widget} ${styles.sticky}`}>
         <header>
           <h2>Recent</h2>
         </header>

@@ -8,15 +8,17 @@ import PeopleIcon from "@material-ui/icons/People";
 import WorkIcon from "@material-ui/icons/Work";
 import SmsIcon from "@material-ui/icons/Sms";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import { Link } from "react-router-dom";
 function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.header__content}>
         <section className={styles.header__left}>
-          <div className={styles.logo}>
-            <LinkedInIcon />
-          </div>
+          <Link to="/">
+            <div className={styles.logo}>
+              <LinkedInIcon />
+            </div>
+          </Link>
           <div className={styles.header__search}>
             <SearchIcon />
             <input type="text" placeholder="Search for everything..." />

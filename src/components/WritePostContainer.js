@@ -6,8 +6,14 @@ import ImageIcon from "@material-ui/icons/Image";
 import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
 import EventIcon from "@material-ui/icons/Event";
 import EventNoteIcon from "@material-ui/icons/EventNote";
+import { db } from "../firebase/firebase";
+import firebase from "firebase";
+
 function WritePostContainer() {
   const [open, setOpen] = useState(false);
+  const [writePost, setWritePost] = useState("");
+
+  /* Start: Modal specific functions */
 
   // modal function
   const handleOpen = () => {
@@ -18,11 +24,31 @@ function WritePostContainer() {
   const handleClose = () => {
     setOpen(false);
   };
+  /* End: Modal specific variables and functions */
 
   const handlePost = (e) => {
     e.preventDefault();
-    // Implement posting feature
+
+    // Adding the written post to the database
+    if (writePost) {
+      db.collection("posts").add({
+        name: "Mocarram Hossain",
+        description: "LinkedIn Clone",
+        content: writePost,
+        photoUrl: "",
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+
+      // resetting the textarea
+      setWritePost("");
+
+      // Closing the modal after posting
+      setOpen(false);
+    } else {
+      alert("Write Something to post");
+    }
   };
+
   return (
     <div className={styles.write__container}>
       <div className={styles.write__area}>
@@ -63,7 +89,9 @@ function WritePostContainer() {
                 <form onSubmit={handlePost}>
                   <textarea
                     placeholder="What do you want to talk about?"
-                    id=""
+                    value={writePost}
+                    onChange={(e) => setWritePost(e.target.value)}
+                    autoFocus
                   ></textarea>
                   <button>Post</button>
                 </form>

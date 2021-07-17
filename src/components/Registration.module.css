@@ -1,0 +1,111 @@
+.welcome__page {
+  max-width: 1148px;
+  margin: 0 auto;
+  padding: 0 10px;
+  background-size: cover;
+  position: relative;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.welcome__logo {
+  display: flex;
+  font-size: 3.4rem;
+  align-items: center;
+  font-weight: 700;
+  color: #0a66c2;
+}
+.welcome__logo svg {
+  font-size: 4.4rem;
+}
+.nav__items {
+  display: flex;
+  grid-gap: 15px;
+  gap: 5px;
+  align-items: center;
+}
+.nav__items button {
+  border: none;
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #767676;
+}
+
+.sign__in {
+  border: 2px solid #0a66c2 !important;
+  color: #0a66c2 !important;
+}
+
+.login__area {
+}
+.login__area form {
+  display: flex;
+  flex-direction: column;
+  max-width: 40%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+.login__area input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px 10px;
+}
+.login__area button {
+  background-color: #0073b1;
+  border: 0;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: inherit;
+  height: 48px;
+  line-height: 48px;
+  overflow: hidden;
+  outline-width: 2px;
+  padding: 0 32px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition-duration: 167ms;
+  transition-duration: 167ms;
+  -webkit-transition-property: background-color, color, -webkit-box-shadow;
+  transition-property: background-color, color, -webkit-box-shadow;
+  transition-property: background-color, box-shadow, color;
+  transition-property: background-color, box-shadow, color, -webkit-box-shadow;
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  vertical-align: middle;
+  z-index: 0;
+  border-radius: 24px;
+  background-color: #0a66c2;
+  height: 56px;
+  font-weight: 400;
+}
+.hero__text {
+  font-size: 5.6rem;
+  color: #2977c9;
+  font-weight: 200;
+  width: 60%;
+  padding: 50px 0;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.agreement {
+  font-size: 1.2rem;
+  padding: 5px 20px 15px;
+  color: #636363;
+}

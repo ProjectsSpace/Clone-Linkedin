@@ -9,10 +9,12 @@ a:visited {
   color: #0009;
 }
 
-.sidebar {
-  position: -webkit-sticky; /* Safari */
+.sticky {
   position: sticky;
   top: 80px;
+}
+
+.sidebar {
   font-size: 1.2rem;
 }
 
@@ -87,10 +89,8 @@ a:visited {
   font-weight: 400;
 }
 .widget__body {
-
 }
 .hash__tags {
-  
 }
 .hash__tags {
   list-style-type: none;
