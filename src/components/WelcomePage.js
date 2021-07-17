@@ -3,9 +3,14 @@ import styles from "./WelcomePage.module.css";
 import { Link, useHistory } from "react-router-dom";
 
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import { useSelector } from "react-redux";
+import { selectUser } from "../redux/userSlice";
+import { auth } from "../firebase/firebase";
 function WelcomePage() {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const history = useHistory();
-  const [user, setUser] = useState("");
+  const user = useSelector(selectUser);
   // If a user, redirect to app page
   if (user) {
     history.push("/");
@@ -13,6 +18,17 @@ function WelcomePage() {
   // Login handler
   const handleLogin = (e) => {
     e.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        if (userCredential) {
+          history.push("/");
+        }
+      })
+      .catch((err) => {
+        alert(err.message);
+      });
   };
   return (
     <div className={styles.welcome__page}>
@@ -37,8 +53,18 @@ function WelcomePage() {
           <p>Welcome to your cloned professional community</p>
         </div>
         <form onSubmit={handleLogin}>
-          <input type="email" placeholder="Enter email" />
-          <input type="password" placeholder="Enter password" />
+          <input
+            type="email"
+            placeholder="Enter email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Enter password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <button>Sign in</button>
         </form>
       </section>

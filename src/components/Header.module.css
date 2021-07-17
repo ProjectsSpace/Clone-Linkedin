@@ -14,7 +14,7 @@
 .header__left {
   display: flex;
   align-items: center;
-  flex: 2;
+  flex: 0.6;
 }
 .logo {
   display: flex;
@@ -67,4 +67,5 @@
 .header__right {
   composes: header__left;
   justify-content: space-between;
+  flex: 0.4;
 }

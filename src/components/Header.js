@@ -8,8 +8,23 @@ import PeopleIcon from "@material-ui/icons/People";
 import WorkIcon from "@material-ui/icons/Work";
 import SmsIcon from "@material-ui/icons/Sms";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { auth } from "../firebase/firebase";
+import { useDispatch } from "react-redux";
+import { logout } from "../redux/userSlice";
+import UserOptions from "./UserOptions";
 function Header() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  // To logout a user
+  const userLogout = () => {
+    dispatch(logout());
+
+    auth.signOut();
+
+    history.push("/welcome");
+  };
   return (
     <header className={styles.header}>
       <div className={styles.header__content}>
@@ -31,8 +46,9 @@ function Header() {
           <HeaderOption Icon={SmsIcon} title="Messaging" />
           <HeaderOption Icon={NotificationsIcon} title="Notifications" />
           <HeaderOption
-            avatar="https://avatars.githubusercontent.com/u/9009219?v=4"
-            title="Mocarram"
+            avatar="https://icon-library.com/images/coder-icon/coder-icon-7.jpg"
+            title=""
+            Options={UserOptions}
           />
         </section>
       </div>
