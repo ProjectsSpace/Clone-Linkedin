@@ -10,6 +10,7 @@ import { db } from "../firebase/firebase";
 
 function FeedPost({ name, description, content, profilePhoto, postId }) {
   const [likesCount, setLikesCount] = useState(0);
+  const [active, setActive] = useState(false);
   const [commentsCount, setCommentsCount] = useState(0);
 
   // Getting likes count from the database
@@ -23,6 +24,9 @@ function FeedPost({ name, description, content, profilePhoto, postId }) {
   }, [postId]);
 
   const handleLike = () => {
+    // setting the item to active to color differently
+    setActive(true);
+
     // Adding like count to the database with an increment
     db.collection("posts")
       .doc(postId)
@@ -60,6 +64,7 @@ function FeedPost({ name, description, content, profilePhoto, postId }) {
           Icon={ThumbUpIcon}
           title="Like"
           color="#0009"
+          active={active}
         />
         <PostOption Icon={CommentIcon} title="Comment" color="#0009" />
         <PostOption Icon={ShareIcon} title="Share" color="#0009" />
