@@ -5,6 +5,7 @@
   background: url(https://static-exp1.licdn.com/sc/h/dxf91zhqd2z6b0bwg85ktm5s4);
   background-size: cover;
   position: relative;
+  height: 100vh;
 }
 
 .navbar {

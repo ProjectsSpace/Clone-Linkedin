@@ -33,12 +33,10 @@ function WelcomePage() {
   return (
     <div className={styles.welcome__page}>
       <header className={styles.navbar}>
-        <Link to="/">
-          <div className={styles.welcome__logo}>
-            Linked
-            <LinkedInIcon />
-          </div>
-        </Link>
+        <div className={styles.welcome__logo}>
+          Linked
+          <LinkedInIcon />
+        </div>
         <div className={styles.nav__items}>
           <Link to="/register">
             <button>Join now</button>
