@@ -3,13 +3,19 @@ import styles from "./Sidebar.module.css";
 import { Avatar } from "@material-ui/core";
 import FullscreenExitIcon from "@material-ui/icons/FullscreenExit";
 import { Link } from "react-router-dom";
+import { selectUser } from "../redux/userSlice";
+import { useSelector } from "react-redux";
 function Sidebar() {
+  // Getting the current user
+  const user = useSelector(selectUser);
+
   // function for generating hashtag topics and links
   const hashTag = (topic) => (
     <Link to={`/${topic}`}>
       <FullscreenExitIcon /> <span>{topic}</span>
     </Link>
   );
+
   return (
     <div className={styles.sidebar}>
       <div className={`${styles.widget} ${styles.user__identity}`}>
@@ -19,11 +25,10 @@ function Sidebar() {
             alt=""
           />
           <Link to="/">
-            <Avatar
-              src="https://avatars.githubusercontent.com/u/9009219?v=4"
-              className={styles.avatar}
-            />
-            <h4>Mocarram</h4>
+            <Avatar src={user?.profilePhoto} className={styles.avatar}>
+              {user && user?.email[0]}
+            </Avatar>
+            <h4>{user?.displayName}</h4>
           </Link>
         </div>
         <div className={styles.user__stats}>

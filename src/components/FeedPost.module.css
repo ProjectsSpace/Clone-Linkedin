@@ -33,8 +33,24 @@
   gap: 12px;
   font-size: 1.2rem;
   color: #00000070;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .post__actions h4 {
   margin-left: 5px !important;
+}
+
+.post__reactions {
+  display: flex;
+  gap: 15px;
+  padding: 5px 0;
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  color: #00000070;
+  font-weight: 600;
+}
+.likes {
+}
+.comments {
 }

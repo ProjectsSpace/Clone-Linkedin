@@ -1,5 +1,61 @@
+a {
+  color: #0009;
+}
+a:hover {
+  text-decoration: underline;
+  color: #0009;
+}
+a:visited {
+  color: #0009;
+}
+
+.sticky {
+  position: sticky;
+  top: 80px;
+}
+
 .aside {
-  background: #fff;
+  font-size: 1.2rem;
+}
+
+.widget {
   border-radius: 8px;
-  border: 1px solid #00000026;
+  background: #fff;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #00000014;
+}
+.widget > header {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #00000014;
+}
+.widget > header h2 {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+.widget__body {
+}
+
+.widget__body .footer__menu {
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.news__links {
+  padding-inline-start: 15px;
+}
+.news__links li,
+.footer__menu li {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+.news__links li a,
+.footer__menu li a {
+  font-weight: 600;
+  display: block;
 }

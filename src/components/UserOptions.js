@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import { auth } from "../firebase/firebase";
-import { logout } from "../redux/userSlice";
-import { useDispatch } from "react-redux";
+import { logout, selectUser } from "../redux/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styles from "./UserOptions.module.css";
 export default function UserOptions() {
   const dispatch = useDispatch();
   const history = useHistory();
   const [anchorEl, setAnchorEl] = useState(null);
+
+  const user = useSelector(selectUser);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -36,12 +37,15 @@ export default function UserOptions() {
     alert("Hi test");
     setAnchorEl(null);
   };
+
   return (
     <div>
       <span onClick={handleClick}>
-        Mocarram <span className={styles.option__icon}>&#10148;</span>
+        {user?.displayName}{" "}
+        <span className={styles.option__icon}>&#10148;</span>
       </span>
       <Menu
+        className={styles.option__list}
         id="simple-menu"
         anchorEl={anchorEl}
         keepMounted

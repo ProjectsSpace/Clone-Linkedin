@@ -8,10 +8,15 @@ import EventIcon from "@material-ui/icons/Event";
 import EventNoteIcon from "@material-ui/icons/EventNote";
 import { db } from "../firebase/firebase";
 import firebase from "firebase";
+import { useSelector } from "react-redux";
+import { selectUser } from "../redux/userSlice";
 
 function WritePostContainer() {
   const [open, setOpen] = useState(false);
   const [writePost, setWritePost] = useState("");
+
+  // Getting the user
+  const user = useSelector(selectUser);
 
   /* Start: Modal specific functions */
 
@@ -32,10 +37,11 @@ function WritePostContainer() {
     // Adding the written post to the database
     if (writePost) {
       db.collection("posts").add({
-        name: "Mocarram Hossain",
+        name: user?.displayName,
         description: "LinkedIn Clone",
         content: writePost,
-        photoUrl: "",
+        profilePhoto: "",
+        likes: 0,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       });
 
@@ -82,7 +88,7 @@ function WritePostContainer() {
                     src="https://avatars.githubusercontent.com/u/9009219?v=4"
                     className={styles.avatar}
                   />
-                  <p>Mocarram Hossain</p>
+                  <p>{user?.displayName}</p>
                 </div>
               </header>
               <div className={styles.modal__postBody}>

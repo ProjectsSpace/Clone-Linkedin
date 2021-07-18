@@ -36,7 +36,7 @@ function WelcomePage() {
               dispatch(
                 login({
                   uid: userCredential.user.uid,
-                  username: username,
+                  displayName: username,
                   email: email,
                 })
               );

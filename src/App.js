@@ -38,6 +38,8 @@ function App() {
     });
   }, [history, dispatch]);
 
+  console.log(user);
+
   // If not a user, redirect to welcome page
   if (!user) {
     history.replace("/welcome");

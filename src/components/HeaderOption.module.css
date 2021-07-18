@@ -22,4 +22,7 @@
 .avatar {
   composes: icon;
   border-radius: 50%;
+  background-color: rgb(112, 181, 249) !important;
+  font-weight: 800;
+  text-transform: capitalize;
 }
