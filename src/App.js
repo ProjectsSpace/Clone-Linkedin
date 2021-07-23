@@ -13,11 +13,14 @@ import { useEffect } from "react";
 import { auth } from "./firebase/firebase";
 
 function App() {
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
   const history = useHistory();
 
-  const dispatch = useDispatch();
-
-  const user = useSelector(selectUser);
+  // If not a user, redirect to welcome page
+  if (!user) {
+    history.replace("/welcome");
+  }
 
   useEffect(() => {
     auth.onAuthStateChanged((userCredential) => {
@@ -38,12 +41,6 @@ function App() {
     });
   }, [history, dispatch]);
 
-  console.log(user);
-
-  // If not a user, redirect to welcome page
-  if (!user) {
-    history.replace("/welcome");
-  }
   return (
     <div className={styles.app}>
       <Switch>
